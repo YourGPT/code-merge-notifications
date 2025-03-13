@@ -20,9 +20,10 @@ app.use('/api', routes);
 // Default route
 app.get('/', (req, res) => {
   res.status(200).json({
-    // name: 'GitHub Merge Checklist Bot',
-    // description: 'A bot that generates checklists based on previous commits when merging to master or development branches, and notifies teams on Discord.',
+    //  name: 'GitHub Merge Checklist Bot',
+    //  description: 'A bot that generates checklists based on previous commits when merging to master or development branches, and notifies teams on Discord.',
     working: true
+
   });
 });
 
