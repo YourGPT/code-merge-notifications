@@ -18,13 +18,6 @@ provider:
   region: eu-north-1
   runtime: nodejs20.x
   timeout: 120
-  vpc:
-    securityGroupIds:
-      - ${self:custom.securityGroupId.${self:provider.stage}}
-    subnetIds:
-      - ${self:custom.subnetId1.${self:provider.stage}}
-      - ${self:custom.subnetId2.${self:provider.stage}}
-      - ${self:custom.subnetId3.${self:provider.stage}}
 
 functions:
   app:
@@ -40,13 +33,3 @@ custom:
   prune:
     automatic: true
     number: 10
-  
-  stage: ${opt:stage, self:provider.stage}
-  securityGroupId:
-    prod: sg-0db9ad3b1654d1b68
-  subnetId1:
-    prod: subnet-08aff6e884f5d91ad
-  subnetId2:
-    prod: subnet-03b1350390bfb4661
-  subnetId3:
-    prod: subnet-004baf593965b1f33
