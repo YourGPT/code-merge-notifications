@@ -3,6 +3,7 @@
  * 
  * Main server file
  */
+const serverless = require("serverless-http");
 const express = require('express');
 const routes = require('./routes');
 const config = require('./config');
@@ -31,3 +32,12 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Webhook URL: http://your-server-url/api/webhook/github`);
 }); 
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Promise Rejection:', reason);
+  console.error('Promise:', promise);
+});
+
+module.exports = app;
+module.exports.handler = serverless(app);
