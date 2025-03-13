@@ -32,7 +32,7 @@ functions:
     timeout: 900
     events:
       - http: ANY /
-      - http: "ANY {proxy+}"
+      # - http: "ANY {proxy+}"
 
 configValidationMode: error
 
