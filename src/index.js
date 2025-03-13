@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 
 // Start server
 const PORT = config.server.port;
+console.log("config", config)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
